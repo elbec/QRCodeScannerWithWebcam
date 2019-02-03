@@ -19,17 +19,6 @@ Public Class MainWindow
     Private Sub btn_stop_Click(sender As Object, e As EventArgs) Handles btn_stop.Click
         StopWebcam()
     End Sub
-    Private Sub btn_detect_Click(sender As Object, e As EventArgs) Handles btn_detect.Click
-        'Scans the received image
-        Try
-            StopWebcam()
-            Reader = New QRCodeDecoder
-            tb_output.Text = Reader.decode(New Data.QRCodeBitmapImage(pb_scanner.Image))
-            MsgBox("QR code is detected!")
-        Catch ex As Exception
-            StartWebcam()
-        End Try
-    End Sub
 
     Private Sub btn_saveImage_Click(sender As Object, e As EventArgs) Handles btn_saveImage.Click
 
@@ -39,6 +28,13 @@ Public Class MainWindow
 
     Private Sub MyWebcam_ImageCaptured(source As Object, e As WebcamEventArgs) Handles MyWebcam.ImageCaptured
         pb_scanner.Image = e.WebCamImage
+        'Auto detect - but slow, too many new Reader objects
+        Try
+            Reader = New QRCodeDecoder
+            tb_output.Text = Reader.decode(New Data.QRCodeBitmapImage(pb_scanner.Image))
+            MyWebcam.Stop()
+        Catch
+        End Try
     End Sub
 
     Private Sub StartWebcam()
