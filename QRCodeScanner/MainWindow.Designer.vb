@@ -22,91 +22,91 @@ Partial Class MainWindow
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btn_start = New System.Windows.Forms.Button()
+        Me.btn_stop = New System.Windows.Forms.Button()
+        Me.btn_detect = New System.Windows.Forms.Button()
+        Me.btn_saveImage = New System.Windows.Forms.Button()
+        Me.pb_scanner = New System.Windows.Forms.PictureBox()
+        Me.tb_output = New System.Windows.Forms.TextBox()
+        CType(Me.pb_scanner, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Button1
+        'btn_start
         '
-        Me.Button1.Location = New System.Drawing.Point(344, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Start"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btn_start.Location = New System.Drawing.Point(344, 12)
+        Me.btn_start.Name = "btn_start"
+        Me.btn_start.Size = New System.Drawing.Size(75, 23)
+        Me.btn_start.TabIndex = 0
+        Me.btn_start.Text = "Start"
+        Me.btn_start.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btn_stop
         '
-        Me.Button2.Location = New System.Drawing.Point(344, 41)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Stop"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btn_stop.Location = New System.Drawing.Point(344, 41)
+        Me.btn_stop.Name = "btn_stop"
+        Me.btn_stop.Size = New System.Drawing.Size(75, 23)
+        Me.btn_stop.TabIndex = 1
+        Me.btn_stop.Text = "Stop"
+        Me.btn_stop.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btn_detect
         '
-        Me.Button3.Location = New System.Drawing.Point(344, 70)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Detect"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btn_detect.Location = New System.Drawing.Point(344, 70)
+        Me.btn_detect.Name = "btn_detect"
+        Me.btn_detect.Size = New System.Drawing.Size(75, 23)
+        Me.btn_detect.TabIndex = 2
+        Me.btn_detect.Text = "Detect"
+        Me.btn_detect.UseVisualStyleBackColor = True
         '
-        'Button4
+        'btn_saveImage
         '
-        Me.Button4.Location = New System.Drawing.Point(344, 99)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 3
-        Me.Button4.Text = "Save Image"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.btn_saveImage.Location = New System.Drawing.Point(344, 99)
+        Me.btn_saveImage.Name = "btn_saveImage"
+        Me.btn_saveImage.Size = New System.Drawing.Size(75, 23)
+        Me.btn_saveImage.TabIndex = 3
+        Me.btn_saveImage.Text = "Save Image"
+        Me.btn_saveImage.UseVisualStyleBackColor = True
         '
-        'PictureBox1
+        'pb_scanner
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(326, 265)
-        Me.PictureBox1.TabIndex = 4
-        Me.PictureBox1.TabStop = False
+        Me.pb_scanner.Location = New System.Drawing.Point(12, 12)
+        Me.pb_scanner.Name = "pb_scanner"
+        Me.pb_scanner.Size = New System.Drawing.Size(326, 265)
+        Me.pb_scanner.TabIndex = 4
+        Me.pb_scanner.TabStop = False
         '
-        'TextBox1
+        'tb_output
         '
-        Me.TextBox1.Location = New System.Drawing.Point(12, 283)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(326, 71)
-        Me.TextBox1.TabIndex = 5
+        Me.tb_output.Location = New System.Drawing.Point(12, 283)
+        Me.tb_output.Multiline = True
+        Me.tb_output.Name = "tb_output"
+        Me.tb_output.ReadOnly = True
+        Me.tb_output.Size = New System.Drawing.Size(326, 71)
+        Me.tb_output.TabIndex = 5
         '
         'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(428, 360)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.tb_output)
+        Me.Controls.Add(Me.pb_scanner)
+        Me.Controls.Add(Me.btn_saveImage)
+        Me.Controls.Add(Me.btn_detect)
+        Me.Controls.Add(Me.btn_stop)
+        Me.Controls.Add(Me.btn_start)
         Me.Name = "MainWindow"
         Me.Text = "QR Code Scanner"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_scanner, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents btn_start As Button
+    Friend WithEvents btn_stop As Button
+    Friend WithEvents btn_detect As Button
+    Friend WithEvents btn_saveImage As Button
+    Friend WithEvents pb_scanner As PictureBox
+    Friend WithEvents tb_output As TextBox
 End Class

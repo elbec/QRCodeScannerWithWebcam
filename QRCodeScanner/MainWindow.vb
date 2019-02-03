@@ -2,11 +2,43 @@
 Imports MessagingToolkit.QRCode.Codec
 
 Public Class MainWindow
+
+    'Declarations
+
     WithEvents MyWebcam As WebCamCapture
     Dim Reader As QRCodeDecoder
 
+
+    'Buttons
+
+    Private Sub btn_start_Click(sender As Object, e As EventArgs) Handles btn_start.Click
+        StartWebcam()
+        tb_output.Clear()
+    End Sub
+
+    Private Sub btn_stop_Click(sender As Object, e As EventArgs) Handles btn_stop.Click
+        StopWebcam()
+    End Sub
+    Private Sub btn_detect_Click(sender As Object, e As EventArgs) Handles btn_detect.Click
+        'Scans the received image
+        Try
+            StopWebcam()
+            Reader = New QRCodeDecoder
+            tb_output.Text = Reader.decode(New Data.QRCodeBitmapImage(pb_scanner.Image))
+            MsgBox("QR code is detected!")
+        Catch ex As Exception
+            StartWebcam()
+        End Try
+    End Sub
+
+    Private Sub btn_saveImage_Click(sender As Object, e As EventArgs) Handles btn_saveImage.Click
+
+    End Sub
+
+    'Functions
+
     Private Sub MyWebcam_ImageCaptured(source As Object, e As WebcamEventArgs) Handles MyWebcam.ImageCaptured
-        PictureBox1.Image = e.WebCamImage
+        pb_scanner.Image = e.WebCamImage
     End Sub
 
     Private Sub StartWebcam()
@@ -26,27 +58,6 @@ Public Class MainWindow
             MyWebcam.Dispose()
         Catch ex As Exception
 
-        End Try
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        StartWebcam()
-        TextBox1.Clear()
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        StopWebcam()
-    End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        'Scans the received image
-        Try
-            StopWebcam()
-            Reader = New QRCodeDecoder
-            TextBox1.Text = Reader.decode(New Data.QRCodeBitmapImage(PictureBox1.Image))
-            MsgBox("QR code is detected!")
-        Catch ex As Exception
-            StartWebcam()
         End Try
     End Sub
 End Class
